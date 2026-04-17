@@ -1,0 +1,107 @@
+{
+  "brand": {
+    "name": "MP 20 Soya King",
+    "city": "Jabalpur",
+    "tagline": "A lightweight restaurant website built for quick hosting and easy updates.",
+    "headline": "Fresh soya chaap, fast ordering, and a clean website that works on any server.",
+    "description": "MP 20 Soya King serves crowd-favorite soya chaap, momos, gravy dishes, noodles, and biryani from Rampur Chowk, Hathital, Jabalpur."
+  },
+  "contact": {
+    "owner": "Pankaj Sharma",
+    "phone": "+91 80850 96155",
+    "whatsapp": "918085096155",
+    "address": "Rampur Chowk, Narmada Road, Opp. Neel Gas Agency, Hathital, Jabalpur - 482001",
+    "hours": "Open daily till 11:00 PM",
+    "zomatoUrl": "https://www.zomato.com/jabalpur/mp-20-soya-king-hathital",
+    "instagramUrl": "https://www.instagram.com/mp20_soyaking/",
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.2!2d79.948!3d23.172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3981aed7d5a23b87%3A0x12e2d09ef97f9e16!2sMP%2020%20Soya%20King!5e0!3m2!1sen!2sin!4v1234567890123"
+  },
+  "highlights": [
+    "Minimal code and no frontend framework",
+    "Node backend with no external package dependency",
+    "Mobile-friendly layout for restaurant visitors",
+    "Ready to host on VPS, Windows server, or cloud app service"
+  ],
+  "menu": [
+    {
+      "name": "Malai Soya Chaap",
+      "price": 130,
+      "category": "Soya Chaap",
+      "tag": "Bestseller",
+      "description": "Creamy, smoky, and grilled fresh for the house special."
+    },
+    {
+      "name": "Tandoori Soya Chaap",
+      "price": 130,
+      "category": "Soya Chaap",
+      "tag": "Popular",
+      "description": "Bold tandoori flavor with mint chutney on the side."
+    },
+    {
+      "name": "Hara Bhara Soya Chaap",
+      "price": 130,
+      "category": "Soya Chaap",
+      "tag": "Fresh",
+      "description": "Herb-coated chaap with a lighter green spice profile."
+    },
+    {
+      "name": "Soya Chaap Masala Gravy",
+      "price": 150,
+      "category": "Gravy",
+      "tag": "House Pick",
+      "description": "Rich masala gravy for guests who want a full meal."
+    },
+    {
+      "name": "Malai Soya Gravy",
+      "price": 160,
+      "category": "Gravy",
+      "tag": "Creamy",
+      "description": "Silky cream-based gravy with soft chaap pieces."
+    },
+    {
+      "name": "Tandoori Momos",
+      "price": 120,
+      "category": "Momos",
+      "tag": "Trending",
+      "description": "Tandoor-finished momos with a spicy outer layer."
+    },
+    {
+      "name": "Pan-Fried Momos",
+      "price": 110,
+      "category": "Momos",
+      "tag": "Quick Bite",
+      "description": "Crispy outside, juicy inside, great for evening orders."
+    },
+    {
+      "name": "Veg Noodles",
+      "price": 100,
+      "category": "Chinese",
+      "tag": "Value",
+      "description": "Fast-moving favorite for light and affordable meals."
+    },
+    {
+      "name": "Veg Biryani",
+      "price": 150,
+      "category": "Rice",
+      "tag": "Family Pick",
+      "description": "Fragrant rice layered with spices and herbs."
+    }
+  ],
+  "reviews": [
+    {
+      "name": "Rajesh Kumar",
+      "rating": 5,
+      "text": "Best soya chaap in Jabalpur. The malai chaap is consistently good."
+    },
+    {
+      "name": "Shruti M.",
+      "rating": 5,
+      "text": "Clean taste, fast service, and easy location near Rampur Chowk."
+    },
+    {
+      "name": "Ankit P.",
+      "rating": 4,
+      "text": "Reasonable pricing and a menu that feels focused instead of confusing."
+    }
+  ]
+}
