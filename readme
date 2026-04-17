@@ -1,0 +1,32 @@
+# MP 20 Light Site
+
+Lightweight restaurant website with:
+
+- plain HTML, CSS, and JavaScript
+- tiny Node backend using only built-in modules
+- JSON-driven menu and contact details
+- enquiry form that saves messages to `data/inquiries.json`
+
+## Run locally
+
+```powershell
+cd C:\Users\gunik\mp20-light-site
+npm start
+```
+
+Open `http://localhost:3000`
+
+## Files to edit
+
+- `data/site-data.json` for menu, phone, address, links, and reviews
+- `public/styles.css` for colors and layout
+- `public/index.html` for sections
+
+## Hosting
+
+This can be hosted on:
+
+- any VPS with Node.js installed
+- Windows Server with Node.js
+- Azure App Service
+- Render, Railway, or similar Node hosting
