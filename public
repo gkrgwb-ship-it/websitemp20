@@ -1,0 +1,128 @@
+async function loadSite() {
+  const response = await fetch("/api/site-data");
+
+  if (!response.ok) {
+    throw new Error("Unable to load website data.");
+  }
+
+  return response.json();
+}
+
+function createMenuCard(item) {
+  return `
+    <article class="menu-card">
+      <div class="menu-card-top">
+        <span class="chip">${item.category}</span>
+        <span class="chip">${item.tag}</span>
+      </div>
+      <h3>${item.name}</h3>
+      <p>${item.description}</p>
+      <div class="price">Rs ${item.price}</div>
+    </article>
+  `;
+}
+
+function createReviewCard(review) {
+  const stars = "&#9733;".repeat(review.rating) + "&#9734;".repeat(5 - review.rating);
+
+  return `
+    <article class="review-card">
+      <div class="review-rating">${stars}</div>
+      <h3>${review.name}</h3>
+      <p>${review.text}</p>
+    </article>
+  `;
+}
+
+function renderSite(data) {
+  document.getElementById("brandName").textContent = data.brand.name;
+  document.getElementById("brandCity").textContent = data.brand.city;
+  document.getElementById("heroHeadline").textContent = data.brand.headline;
+  document.getElementById("heroDescription").textContent = data.brand.description;
+  document.getElementById("brandTagline").textContent = data.brand.tagline;
+
+  document.getElementById("highlightList").innerHTML = data.highlights
+    .map((item) => `<li>${item}</li>`)
+    .join("");
+
+  document.getElementById("menuGrid").innerHTML = data.menu
+    .map(createMenuCard)
+    .join("");
+
+  document.getElementById("reviewGrid").innerHTML = data.reviews
+    .map(createReviewCard)
+    .join("");
+
+  document.getElementById("ownerName").textContent = data.contact.owner;
+  document.getElementById("addressText").textContent = data.contact.address;
+  document.getElementById("hoursText").textContent = data.contact.hours;
+  document.getElementById("footerText").textContent = `${data.brand.name} | ${data.brand.city}`;
+
+  const phoneLink = document.getElementById("phoneLink");
+  phoneLink.textContent = data.contact.phone;
+  phoneLink.href = `tel:${data.contact.phone.replace(/\s+/g, "")}`;
+
+  const whatsappLink = document.getElementById("whatsappLink");
+  whatsappLink.href = `https://wa.me/${data.contact.whatsapp}`;
+
+  const zomatoLink = document.getElementById("zomatoLink");
+  zomatoLink.href = data.contact.zomatoUrl;
+
+  const instagramLink = document.getElementById("instagramLink");
+  instagramLink.href = data.contact.instagramUrl;
+
+  const mapFrame = document.getElementById("mapFrame");
+  mapFrame.src = data.contact.mapEmbedUrl;
+}
+
+async function submitEnquiry(event) {
+  event.preventDefault();
+
+  const form = event.currentTarget;
+  const status = document.getElementById("formStatus");
+  const formData = new FormData(form);
+  const payload = {
+    name: formData.get("name"),
+    phone: formData.get("phone"),
+    message: formData.get("message")
+  };
+
+  status.textContent = "Sending...";
+
+  try {
+    const response = await fetch("/api/inquiries", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.error || "Unable to send enquiry.");
+    }
+
+    form.reset();
+    status.textContent = result.message;
+  } catch (error) {
+    status.textContent = error.message;
+  }
+}
+
+async function init() {
+  try {
+    const data = await loadSite();
+    renderSite(data);
+  } catch (error) {
+    document.getElementById("menuGrid").innerHTML =
+      "<p>Unable to load website data right now.</p>";
+  }
+
+  document
+    .getElementById("enquiryForm")
+    .addEventListener("submit", submitEnquiry);
+}
+
+init();
