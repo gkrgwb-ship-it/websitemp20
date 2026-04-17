@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MP 20 Soya King</title>
+    <meta
+      name="description"
+      content="Lightweight restaurant website for MP 20 Soya King with a small backend and easy server hosting."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap nav">
+        <a class="brand" href="#top">
+          <span class="brand-mark">MP20</span>
+          <span>
+            <strong id="brandName">MP 20 Soya King</strong>
+            <small id="brandCity">Jabalpur</small>
+          </span>
+        </a>
+        <nav class="nav-links">
+          <a href="#menu">Menu</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Lightweight restaurant website</p>
+            <h1 id="heroHeadline">
+              Fresh soya chaap, fast ordering, and a clean website.
+            </h1>
+            <p class="hero-text" id="heroDescription">
+              Fast to load, easy to host, and simple to maintain.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" id="whatsappLink" href="#" target="_blank" rel="noreferrer">WhatsApp Order</a>
+              <a class="btn btn-secondary" id="zomatoLink" href="#" target="_blank" rel="noreferrer">Order on Zomato</a>
+            </div>
+            <ul class="hero-points" id="highlightList"></ul>
+          </div>
+          <div class="hero-panel">
+            <div class="hero-card">
+              <p class="hero-card-label">Why this version works</p>
+              <h2>Front end plus tiny back end</h2>
+              <div class="hero-metrics">
+                <article>
+                  <strong>0</strong>
+                  <span>frameworks</span>
+                </article>
+                <article>
+                  <strong>1</strong>
+                  <span>small server</span>
+                </article>
+                <article>
+                  <strong>100%</strong>
+                  <span>mobile ready</span>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="eyebrow">About</p>
+            <h2>A proper website without heavy code</h2>
+            <p id="brandTagline"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="menu">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="eyebrow">Menu</p>
+            <h2>Popular items</h2>
+            <p>Menu items are loaded from the backend JSON file, so prices are easy to update.</p>
+          </div>
+          <div class="menu-grid" id="menuGrid"></div>
+        </div>
+      </section>
+
+      <section class="section" id="reviews">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="eyebrow">Reviews</p>
+            <h2>What customers say</h2>
+          </div>
+          <div class="review-grid" id="reviewGrid"></div>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="contact">
+        <div class="wrap contact-grid">
+          <div class="contact-panel">
+            <p class="eyebrow">Contact</p>
+            <h2>Ready for calls, WhatsApp, and walk-ins</h2>
+            <dl class="contact-list">
+              <div>
+                <dt>Owner</dt>
+                <dd id="ownerName"></dd>
+              </div>
+              <div>
+                <dt>Phone</dt>
+                <dd><a id="phoneLink" href="#"></a></dd>
+              </div>
+              <div>
+                <dt>Address</dt>
+                <dd id="addressText"></dd>
+              </div>
+              <div>
+                <dt>Hours</dt>
+                <dd id="hoursText"></dd>
+              </div>
+              <div>
+                <dt>Instagram</dt>
+                <dd><a id="instagramLink" href="#" target="_blank" rel="noreferrer">Open profile</a></dd>
+              </div>
+            </dl>
+          </div>
+
+          <form class="contact-form" id="enquiryForm">
+            <p class="eyebrow">Enquiry form</p>
+            <h3>Send a quick message</h3>
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Your name" required />
+            </label>
+            <label>
+              Phone
+              <input type="tel" name="phone" placeholder="Your phone number" required />
+            </label>
+            <label>
+              Message
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Tell us what you want to ask or order"
+                required
+              ></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">Send enquiry</button>
+            <p class="form-status" id="formStatus"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="section map-section">
+        <div class="wrap">
+          <iframe
+            id="mapFrame"
+            title="MP 20 Soya King location"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-row">
+        <p id="footerText">MP 20 Soya King</p>
+        <a href="#top">Back to top</a>
+      </div>
+    </footer>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
