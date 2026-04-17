@@ -1,0 +1,9 @@
+{
+  "name": "mp20-light-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lightweight restaurant website with a tiny Node backend.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
